@@ -1,2 +1,3 @@
 # devstats-dev-guide
-A guide to how devstats works and how to deploy it.
+
+关于 devstats 如何工作以及如何部署的指南。

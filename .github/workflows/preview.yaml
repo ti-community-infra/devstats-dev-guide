@@ -20,4 +20,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           build: |
             echo donothing
-          dist: book
+          dist: ./book

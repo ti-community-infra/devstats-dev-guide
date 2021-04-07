@@ -14,7 +14,7 @@ devstats 使用 [gha2db](https://github.com/cncf/devstatscode/blob/master/cmd/gh
 
 ### 收集方式
 
-devstats 主要利用 GitHub API 来补充和较正 [GH Archive] 中缺失或错误的数据。devstats 会通过定时任务来调用 GitHub API 获取两个小时以内的相关改动，并且把这些数据更新到 PostgreSQL 中。例如：Issue/PR 当前的 Label 或者 Milestone 信息，就需要 API 尽快的来收集和更新。
+devstats 主要利用 GitHub API 来补充和校正 [GH Archive] 中缺失或错误的数据。devstats 会通过定时任务来调用 GitHub API 获取两个小时以内的相关事件，并且把这些数据更新到 PostgreSQL 中。例如：Issue/PR 当前的 Label 或 Milestone 信息，就需要 API 尽快的来收集和更新。
 
 ### 收集工具
 
@@ -24,7 +24,7 @@ devstats 使用 [ghapi2db](https://github.com/cncf/devstatscode/blob/master/cmd/
 
 ### 收集方式
 
-devstats 会将需要分析的仓库直接 clone 或者 pull 到本地，然后查看整个仓库的所有 git log 并对它进行分析。devstats 会直接通过提交的 SHA 来定位改动并且统计改动大小信息。
+devstats 会将需要分析的仓库直接 clone 或者 pull 到本地，然后查看整个仓库的所有的 git log 并对它进行分析。devstats 会直接通过提交的 SHA 来定位改动并且统计改动大小信息。
 
 ### 收集工具
 
@@ -34,7 +34,7 @@ devstats 使用 [get_repos](https://github.com/cncf/devstatscode/blob/master/cmd
 
 ### 收集方式
 
-[CNCF gitdm] 提供了一个所有公司信息的 [JSON 文件](https://github.com/cncf/devstats/blob/master/github_users.json)，是一个 Git LFS，devstats 会将所有的数据通过该 JSON 文件直接导入。devstats 会从中解析 GitHub 信息并且其他数据结合，这样我们就收集到了大部分贡献者的公司信息。
+[CNCF gitdm] 提供了一个所有公司信息的 [JSON 文件](https://github.com/cncf/devstats/blob/master/github_users.json)，是一个 [Git LFS](https://git-lfs.github.com/)，devstats 会将所有的数据通过该 JSON 文件直接导入。devstats 会从中解析 GitHub 信息并且与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。
 
 ### 收集工具
 

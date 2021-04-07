@@ -47,7 +47,7 @@ GitHub 提供了两套 API 来让用户获取 GitHub 上几乎所有的数据：
 
 [CNCF gitdm] 将数据存储为 txt 和 JSON 文件，并且保持每个月一两次的更新。devstats 会将数据以 [JSON](https://github.com/cncf/devstats/blob/master/github_users.json) 的格式导入到其中来作为数据来源。
 
-[gh archive]: https://github.com/reactjs/rfcs
+[gh archive]: https://www.gharchive.org
 [rest api]: https://docs.github.com/en/rest
 [graphql api]: https://docs.github.com/en/graphql
 [git]: https://git-scm.com

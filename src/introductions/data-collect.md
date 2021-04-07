@@ -8,7 +8,7 @@ devstats 会一次性将 [GH Archive] 所有的 JSON 文件逐个下载下来进
 
 ### 收集工具
 
-devstats 使用 [gha2db](https://github.com/cncf/devstatscode/blob/master/cmd/gha2db/gha2db.go) 工具来分析和解析数据，并将数据存储到 PostgreSQL 中。
+devstats 使用 [gha2db](https://github.com/cncf/devstatscode/blob/master/cmd/gha2db/gha2db.go) 工具来解析数据，并将数据存储到 PostgreSQL 中。
 
 ## GitHub API
 

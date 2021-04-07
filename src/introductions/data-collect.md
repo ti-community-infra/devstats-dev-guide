@@ -34,7 +34,7 @@ devstats 使用 [get_repos](https://github.com/cncf/devstatscode/blob/master/cmd
 
 ### 收集方式
 
-[CNCF gitdm] 提供了一个所有公司信息的 [JSON 文件](https://github.com/cncf/devstats/blob/master/github_users.json)，是一个 [Git LFS](https://git-lfs.github.com/)，devstats 会将所有的数据通过该 JSON 文件直接导入。devstats 会从中解析 GitHub 信息并且与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。
+[CNCF gitdm] 提供了一个存储开发者所属公司信息的 [JSON 文件](https://github.com/cncf/devstats/blob/master/github_users.json)，该文件使用 [Git LFS](https://git-lfs.github.com/) 方式存储。devstats 会从中解析出 GitHub 用户的公司信息，并与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。
 
 ### 收集工具
 

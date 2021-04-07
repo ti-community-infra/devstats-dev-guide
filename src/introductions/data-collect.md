@@ -4,7 +4,7 @@
 
 ### 收集方式
 
-devstats 会一次性将 [GH Archive] 所有的 JSON 文件逐个下载下来进行整合然后存储到 PostgreSQL 中，并且在该过程中会将数据分为固定数据和可变数据，并且用 event_id 作为可变数据的主键来进行维护和更新。
+devstats 会一次性将 [GH Archive] 所有的 JSON 文件逐个下载下来进行解析然后存储到 PostgreSQL 中，并且在该过程中会将数据分为固定数据和可变数据，将 event_id 作为可变数据的主键来进行维护和更新。
 
 ### 收集工具
 

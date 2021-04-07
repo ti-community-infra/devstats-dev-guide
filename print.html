@@ -205,6 +205,25 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 <h1 id="数据存储方式"><a class="header" href="#数据存储方式">数据存储方式</a></h1>
 <h1 id="数据展示方式"><a class="header" href="#数据展示方式">数据展示方式</a></h1>
 <h1 id="架构"><a class="header" href="#架构">架构</a></h1>
+<h2 id="整体架构"><a class="header" href="#整体架构">整体架构</a></h2>
+<h3 id="架构图"><a class="header" href="#架构图">架构图</a></h3>
+<p><img src="../img/arch.png" alt="arch" /></p>
+<h3 id="架构说明"><a class="header" href="#架构说明">架构说明</a></h3>
+<p>当贡献者们在 GitHub 上活动时会产生相关的日志数据，我们会采用定时任务的方式每隔一小时将这些数据同步到 PostgreSQL 中，然后通过 Grafana 将数据展示出来给大家看。另外我们利用 Travis CI 对我们的改动进行测试和部署。</p>
+<h2 id="核心组件"><a class="header" href="#核心组件">核心组件</a></h2>
+<ul>
+<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.grafana">Grafana</a> 用于展示数据</li>
+<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.patroni">PostgreSQL</a> 用于存储数据
+<ul>
+<li>使用 <a href="https://github.com/zalando/patroni">Patroni</a> 构建 PostgreSQL 集群保证高可用性</li>
+</ul>
+</li>
+<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.full.test">Provisions</a> 用于从各个数据源收集数据
+<ul>
+<li>在该组件中主要是使用 <a href="https://github.com/cncf/devstatscode">devstatscode</a> 的代码来从各个数据源收集数据</li>
+</ul>
+</li>
+</ul>
 <h1 id="部署流程"><a class="header" href="#部署流程">部署流程</a></h1>
 <h1 id="定制"><a class="header" href="#定制">定制</a></h1>
 <h1 id="发布流程"><a class="header" href="#发布流程">发布流程</a></h1>

@@ -164,6 +164,26 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="数据收集方式"><a class="header" href="#数据收集方式">数据收集方式</a></h1>
+<h2 id="gh-archive"><a class="header" href="#gh-archive">GH Archive</a></h2>
+<h3 id="收集方式"><a class="header" href="#收集方式">收集方式</a></h3>
+<p>devstats 会一次性将 <a href="https://www.gharchive.org">GH Archive</a> 所有的 JSON 文件逐个下载下来进行解析然后存储到 PostgreSQL 中，并且在该过程中会将数据分为固定数据和可变数据，将 event_id 作为可变数据的主键来进行维护和更新。</p>
+<h3 id="收集工具"><a class="header" href="#收集工具">收集工具</a></h3>
+<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/gha2db/gha2db.go">gha2db</a> 工具来解析数据，并将数据存储到 PostgreSQL 中。</p>
+<h2 id="github-api"><a class="header" href="#github-api">GitHub API</a></h2>
+<h3 id="收集方式-1"><a class="header" href="#收集方式-1">收集方式</a></h3>
+<p>devstats 主要利用 GitHub API 来补充和校正 <a href="https://www.gharchive.org">GH Archive</a> 中缺失或错误的数据。devstats 会通过定时任务来调用 GitHub API 获取两个小时以内的相关事件，并且把这些数据更新到 PostgreSQL 中。例如：Issue/PR 当前的 Label 或 Milestone 信息，就需要 API 尽快的来收集和更新。</p>
+<h3 id="收集工具-1"><a class="header" href="#收集工具-1">收集工具</a></h3>
+<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/ghapi2db/ghapi2db.go">ghapi2db</a> 来调用 GitHub API 拉取数据并将数据存储到 PostgreSQL 中。</p>
+<h2 id="git"><a class="header" href="#git">Git</a></h2>
+<h3 id="收集方式-2"><a class="header" href="#收集方式-2">收集方式</a></h3>
+<p>devstats 会将需要分析的仓库直接 clone 或者 pull 到本地，然后查看整个仓库的所有的 git log 并对它进行分析。devstats 会直接通过提交的 SHA 来定位改动并且统计改动大小信息。</p>
+<h3 id="收集工具-2"><a class="header" href="#收集工具-2">收集工具</a></h3>
+<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/get_repos/get_repos.go">get_repos</a> 来 clone/pull 仓库，并对仓库的 git log 逐一分析。</p>
+<h2 id="cncf-gitdm"><a class="header" href="#cncf-gitdm">CNCF gitdm</a></h2>
+<h3 id="收集方式-3"><a class="header" href="#收集方式-3">收集方式</a></h3>
+<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 提供了一个存储开发者所属公司信息的 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON 文件</a>，该文件使用 <a href="https://git-lfs.github.com/">Git LFS</a> 方式存储。devstats 会从中解析出 GitHub 用户的公司信息，并与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。</p>
+<h3 id="收集工具-3"><a class="header" href="#收集工具-3">收集工具</a></h3>
+<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/import_affs/import_affs.go">import_affs</a> 来解析 JSON 文件将员工公开信息存储到数据库中。</p>
 
                     </main>
 

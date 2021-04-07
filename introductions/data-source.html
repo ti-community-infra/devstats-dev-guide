@@ -166,10 +166,10 @@
                         <h1 id="数据来源"><a class="header" href="#数据来源">数据来源</a></h1>
 <h2 id="gh-archive"><a class="header" href="#gh-archive">GH Archive</a></h2>
 <h3 id="介绍"><a class="header" href="#介绍">介绍</a></h3>
-<p><a href="https://github.com/reactjs/rfcs">GH Archive</a> 是一个记录 GitHub 公共时间轴的项目，将其归档，并使其易于访问，以便进一步分析。</p>
+<p><a href="https://www.gharchive.org">GH Archive</a> 是一个记录 GitHub 公共时间轴的项目，将其归档，并使其易于访问，以便进一步分析。</p>
 <h3 id="记录形式"><a class="header" href="#记录形式">记录形式</a></h3>
-<p><a href="https://github.com/reactjs/rfcs">GH Archive</a> 会将 GitHub 所有的<a href="https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads">事件</a>通过 API <a href="https://github.com/igrigorik/gharchive.org/tree/master/crawler">爬取</a>并存储为 JSON 文件，然后将其整理上传到 Google Big Query 的公开数据集。</p>
-<p>另外， <a href="https://github.com/reactjs/rfcs">GH Archive</a> 在爬取过程中会对邮件信息进行<a href="https://github.com/igrigorik/gharchive.org/blob/a5fb1a4907e26d527f317e5494ebf573864e3d86/crawler/crawler.rb#L40">混淆</a>，防止数据集被利用暴露个人隐私。</p>
+<p><a href="https://www.gharchive.org">GH Archive</a> 会将 GitHub 所有的<a href="https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads">事件</a>通过 API <a href="https://github.com/igrigorik/gharchive.org/tree/master/crawler">爬取</a>并存储为 JSON 文件，然后将其整理上传到 Google Big Query 的公开数据集。</p>
+<p>另外， <a href="https://www.gharchive.org">GH Archive</a> 在爬取过程中会对邮件信息进行<a href="https://github.com/igrigorik/gharchive.org/blob/a5fb1a4907e26d527f317e5494ebf573864e3d86/crawler/crawler.rb#L40">混淆</a>，防止数据集被利用暴露个人隐私。</p>
 <p>devstats 会直接分析这些 JSON 文件作为数据来源。</p>
 <h2 id="github-api"><a class="header" href="#github-api">GitHub API</a></h2>
 <h3 id="介绍-1"><a class="header" href="#介绍-1">介绍</a></h3>

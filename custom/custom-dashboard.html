@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>架构 - devstats-dev-guide</title>
+        <title>定制 Grafana 仪表盘 - devstats-dev-guide</title>
         
         
 
@@ -18,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -49,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="architecture.html" class="active"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="deployment.html"><strong aria-hidden="true">3.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="custom.html"><strong aria-hidden="true">4.</strong> 定制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="custom/custom-dashboard.html"><strong aria-hidden="true">4.1.</strong> 定制 Grafana 仪表盘</a></li></ol></li><li class="chapter-item expanded "><a href="release.html"><strong aria-hidden="true">5.</strong> 发布流程</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="../introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="../introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="../introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="../deployment.html"><strong aria-hidden="true">3.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="../custom.html"><strong aria-hidden="true">4.</strong> 定制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../custom/custom-dashboard.html" class="active"><strong aria-hidden="true">4.1.</strong> 定制 Grafana 仪表盘</a></li></ol></li><li class="chapter-item expanded "><a href="../release.html"><strong aria-hidden="true">5.</strong> 发布流程</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -165,39 +165,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="架构"><a class="header" href="#架构">架构</a></h1>
-<h2 id="整体架构"><a class="header" href="#整体架构">整体架构</a></h2>
-<h3 id="架构图"><a class="header" href="#架构图">架构图</a></h3>
-<p><img src="../img/arch.png" alt="arch" /></p>
-<h3 id="架构说明"><a class="header" href="#架构说明">架构说明</a></h3>
-<p>当贡献者们在 GitHub 上活动时会产生相关的日志数据，我们会采用定时任务的方式每隔一小时将这些数据同步到 PostgreSQL 中，然后通过 Grafana 将数据展示出来给大家看。另外我们利用 Travis CI 对我们的改动进行测试和部署。</p>
-<h2 id="核心组件"><a class="header" href="#核心组件">核心组件</a></h2>
-<ul>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.grafana">Grafana</a> 用于展示数据</li>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.patroni">PostgreSQL</a> 用于存储数据
-<ul>
-<li>使用 <a href="https://github.com/zalando/patroni">Patroni</a> 构建 PostgreSQL 集群保证高可用性</li>
-</ul>
+                        <h1 id="自定义-grafana-仪表盘"><a class="header" href="#自定义-grafana-仪表盘">自定义 Grafana 仪表盘</a></h1>
+<h2 id="步骤"><a class="header" href="#步骤">步骤</a></h2>
+<ol>
+<li>在已经运行的 Grafana 上添加新的 Dashboard 或对已有的 Dashboard 进行修改，并点击保存按钮进行保存；</li>
+<li>通过 <code>kubectl cp</code> 命令将 Grafana 实例所使用的 sqlite 文件 dump 下来；</li>
+</ol>
+<pre><code class="language-bash">kubectl cp devstats-grafana-pingcap-xxx:/root/grafana.pingcap.db ~/dump/grafana.pingcap.db
+kubectl cp devstats-grafana-chaosmesh-xxx:/root/grafana.chaosmesh.db ~/dump/grafana.chaosmesh.db
+kubectl cp devstats-grafana-tikv-xxx:/root/grafana.tikv.db ~/dump/grafana.tikv.db
+</code></pre>
+<ol start="3">
+<li>切换到开发环境配置目录</li>
+</ol>
+<pre><code>cd configs/dev/
+</code></pre>
+<ol start="4">
+<li>将 dump 下来的 sqlite 文件复制到 <code>configs/dev/sqlite</code> 目录内；</li>
+<li>执行 <code>dump_dashboard_json.sh</code> 脚本, 将 sqlite 目录下的 *.db 文件当中的 Dashboard 数据记录转换为 json 文件，存在在 sqlite 目录下。如果希望只对单个项目进行处理，可以通过在命令行前添加变量 <code>ONLY=&lt;project_lowername&gt;</code> 来指定；</li>
+</ol>
+<pre><code class="language-bash">ONLY=tikv dump_dashboard_json.sh
+</code></pre>
+<ol start="5">
+<li>如果希望将新增或修改过后的<strong>单个</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboard.sh</code> 脚本进行复制；</li>
+</ol>
+<pre><code class="language-bash">FROM_PROJ=tikv add_dashboard.sh dashboard_name.json
+</code></pre>
+<ol start="6">
+<li>如果希望将新增或修改过后的<strong>所有</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboards.sh</code> 脚本进行复制；</li>
+</ol>
+<pre><code class="language-bash">FROM_PROJ=tikv add_dashboards.sh
+</code></pre>
+<ol start="7">
+<li>
+<p>核对复制出来的 Dashboard 是否存在错误，因为复制脚本在复制之后后将配置当中的项目名修改为新的项目名，这个过程中可能会修改了不应该修改的项目名，例如：dashboards.json 配置当中包含了所有项目名的链接列表；</p>
 </li>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.full.test">Provisions</a> 用于从各个数据源收集数据
-<ul>
-<li>在该组件中主要是使用 <a href="https://github.com/cncf/devstatscode">devstatscode</a> 的代码来从各个数据源收集数据</li>
-</ul>
+<li>
+<p>提交代码，并在开发环境服务器上进行测试。</p>
 </li>
-</ul>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="introductions/display.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../custom.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="deployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../release.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -209,13 +228,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="introductions/display.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../custom.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="deployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../release.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -238,14 +257,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

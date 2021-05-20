@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="deployment.html"><strong aria-hidden="true">3.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="custom.html"><strong aria-hidden="true">4.</strong> 定制</a></li><li class="chapter-item expanded "><a href="release.html"><strong aria-hidden="true">5.</strong> 发布流程</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="deployment.html"><strong aria-hidden="true">3.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="custom.html"><strong aria-hidden="true">4.</strong> 定制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="custom/custom-dashboard.html"><strong aria-hidden="true">4.1.</strong> 定制 Grafana 仪表盘</a></li></ol></li><li class="chapter-item expanded "><a href="release.html"><strong aria-hidden="true">5.</strong> 发布流程</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -138,13 +138,15 @@
                         </a>
                         
                         
+                        
+
                     </div>
                 </div>
 
                 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -174,7 +176,7 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 <p>因为 devstats 支持其他项目使用，所以我们为 TiDB 社区部署了一套来帮助我们进行社区状况分析。（正在进行中）</p>
 <h2 id="关于本书"><a class="header" href="#关于本书">关于本书</a></h2>
 <p>编写本书的目的：一方面是希望本书作为一本手册能够分析 devstats 的架构和记录它的部署流程，另外一方面也希望能够作为一个使用 devstats 的例子供其他社区参考。</p>
-<h1 id="数据来源"><a class="header" href="#数据来源">数据来源</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="数据来源"><a class="header" href="#数据来源">数据来源</a></h1>
 <h2 id="gh-archive"><a class="header" href="#gh-archive">GH Archive</a></h2>
 <h3 id="介绍"><a class="header" href="#介绍">介绍</a></h3>
 <p><a href="https://www.gharchive.org">GH Archive</a> 是一个记录 GitHub 公共时间轴的项目，将其归档，并使其易于访问，以便进一步分析。</p>
@@ -201,7 +203,7 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 <p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 是 CNCF 对 <a href="https://lwn.net/Articles/290957">gitdm</a> 的一个 fork，用来计算开发者及其公司对开源项目的贡献。</p>
 <h3 id="记录形式-3"><a class="header" href="#记录形式-3">记录形式</a></h3>
 <p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 将数据存储为 txt 和 JSON 文件，并且保持每个月一两次的更新。devstats 会将数据以 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON</a> 的格式导入到其中来作为数据来源。</p>
-<h1 id="数据收集方式"><a class="header" href="#数据收集方式">数据收集方式</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="数据收集方式"><a class="header" href="#数据收集方式">数据收集方式</a></h1>
 <h2 id="gh-archive-1"><a class="header" href="#gh-archive-1">GH Archive</a></h2>
 <h3 id="收集方式"><a class="header" href="#收集方式">收集方式</a></h3>
 <p>devstats 会一次性将 <a href="https://www.gharchive.org">GH Archive</a> 所有的 JSON 文件逐个下载下来进行解析然后存储到 PostgreSQL 中，并且在该过程中会将数据分为固定数据和可变数据，将 event_id 作为可变数据的主键来进行维护和更新。</p>
@@ -222,9 +224,9 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 <p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 提供了一个存储开发者所属公司信息的 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON 文件</a>，该文件使用 <a href="https://git-lfs.github.com/">Git LFS</a> 方式存储。devstats 会从中解析出 GitHub 用户的公司信息，并与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。</p>
 <h3 id="收集工具-3"><a class="header" href="#收集工具-3">收集工具</a></h3>
 <p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/import_affs/import_affs.go">import_affs</a> 来解析 JSON 文件将员工公开信息存储到数据库中。</p>
-<h1 id="数据存储方式"><a class="header" href="#数据存储方式">数据存储方式</a></h1>
-<h1 id="数据展示方式"><a class="header" href="#数据展示方式">数据展示方式</a></h1>
-<h1 id="架构"><a class="header" href="#架构">架构</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="数据存储方式"><a class="header" href="#数据存储方式">数据存储方式</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="数据展示方式"><a class="header" href="#数据展示方式">数据展示方式</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="架构"><a class="header" href="#架构">架构</a></h1>
 <h2 id="整体架构"><a class="header" href="#整体架构">整体架构</a></h2>
 <h3 id="架构图"><a class="header" href="#架构图">架构图</a></h3>
 <p><img src="../img/arch.png" alt="arch" /></p>
@@ -244,9 +246,48 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 </ul>
 </li>
 </ul>
-<h1 id="部署流程"><a class="header" href="#部署流程">部署流程</a></h1>
-<h1 id="定制"><a class="header" href="#定制">定制</a></h1>
-<h1 id="发布流程"><a class="header" href="#发布流程">发布流程</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="部署流程"><a class="header" href="#部署流程">部署流程</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="定制"><a class="header" href="#定制">定制</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="自定义-grafana-仪表盘"><a class="header" href="#自定义-grafana-仪表盘">自定义 Grafana 仪表盘</a></h1>
+<h2 id="步骤"><a class="header" href="#步骤">步骤</a></h2>
+<ol>
+<li>在已经运行的 Grafana 上添加新的 Dashboard 或对已有的 Dashboard 进行修改，并点击保存按钮进行保存；</li>
+<li>通过 <code>kubectl cp</code> 命令将 Grafana 实例所使用的 sqlite 文件 dump 下来；</li>
+</ol>
+<pre><code class="language-bash">kubectl cp devstats-grafana-pingcap-xxx:/root/grafana.pingcap.db ~/dump/grafana.pingcap.db
+kubectl cp devstats-grafana-chaosmesh-xxx:/root/grafana.chaosmesh.db ~/dump/grafana.chaosmesh.db
+kubectl cp devstats-grafana-tikv-xxx:/root/grafana.tikv.db ~/dump/grafana.tikv.db
+</code></pre>
+<ol start="3">
+<li>切换到开发环境配置目录</li>
+</ol>
+<pre><code>cd configs/dev/
+</code></pre>
+<ol start="4">
+<li>将 dump 下来的 sqlite 文件复制到 <code>configs/dev/sqlite</code> 目录内；</li>
+<li>执行 <code>dump_dashboard_json.sh</code> 脚本, 将 sqlite 目录下的 *.db 文件当中的 Dashboard 数据记录转换为 json 文件，存在在 sqlite 目录下。如果希望只对单个项目进行处理，可以通过在命令行前添加变量 <code>ONLY=&lt;project_lowername&gt;</code> 来指定；</li>
+</ol>
+<pre><code class="language-bash">ONLY=tikv dump_dashboard_json.sh
+</code></pre>
+<ol start="5">
+<li>如果希望将新增或修改过后的<strong>单个</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboard.sh</code> 脚本进行复制；</li>
+</ol>
+<pre><code class="language-bash">FROM_PROJ=tikv add_dashboard.sh dashboard_name.json
+</code></pre>
+<ol start="6">
+<li>如果希望将新增或修改过后的<strong>所有</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboards.sh</code> 脚本进行复制；</li>
+</ol>
+<pre><code class="language-bash">FROM_PROJ=tikv add_dashboards.sh
+</code></pre>
+<ol start="7">
+<li>
+<p>核对复制出来的 Dashboard 是否存在错误，因为复制脚本在复制之后后将配置当中的项目名修改为新的项目名，这个过程中可能会修改了不应该修改的项目名，例如：dashboards.json 配置当中包含了所有项目名的链接列表；</p>
+</li>
+<li>
+<p>提交代码，并在开发环境服务器上进行测试。</p>
+</li>
+</ol>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="发布流程"><a class="header" href="#发布流程">发布流程</a></h1>
 
                     </main>
 

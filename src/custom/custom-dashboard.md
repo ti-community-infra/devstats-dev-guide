@@ -18,7 +18,7 @@ cd configs/dev/
 ```
 
 4. 将 dump 下来的 sqlite 文件复制到 `configs/dev/sqlite` 目录内；
-5. 执行 `dump_dashboard_json.sh` 脚本, 将 sqlite 目录下的 *.db 文件当中的 Dashboard 数据记录转换为 json 文件，存在在 sqlite 目录下。如果希望只对单个项目进行处理，可以通过在命令行前添加变量 `ONLY=<project_lowername>` 来指定；
+5. 执行 `dump_dashboard_json.sh` 脚本, 将 sqlite 目录下的 \*.db 文件当中的 Dashboard 数据记录转换为 json 文件，存在在 sqlite 目录下。如果希望只对单个项目进行处理，可以通过在命令行前添加变量 `ONLY=<project_lowername>` 来指定；
 
 ```bash
 ONLY=tikv dump_dashboard_json.sh
@@ -39,4 +39,3 @@ FROM_PROJ=tikv add_dashboards.sh
 7. 核对复制出来的 Dashboard 是否存在错误，因为复制脚本在复制之后后将配置当中的项目名修改为新的项目名，这个过程中可能会修改了不应该修改的项目名，例如：dashboards.json 配置当中包含了所有项目名的链接列表；
 
 8. 提交代码，并在开发环境服务器上进行测试。
-

@@ -8,4 +8,5 @@
 - [架构](./architecture.md)
 - [部署流程](./deployment.md)
 - [定制](./custom.md)
+  - [定制 Grafana 仪表盘](./custom/custom-dashboard.md)
 - [发布流程](./release.md)

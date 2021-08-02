@@ -26,6 +26,29 @@ GhArchive 上的数据是用户在 GitHub
 | `merged_at`    | datetime |                                                            |
 | `comments`     | int      | 评论的数量                                                 |
 
+
+## Pull Request Assignees
+
+Pull Request 当前分配的 Assignees。
+
+视图名：`pull_request_assignees`
+
+| 字段名            | 数据类型   | 附加说明                          |
+| ---------------- | --------- | -------------------------------- |
+| `pull_request_id` | bigint   |                                   |
+| `assignee_id`     | bigint   | 可与 `gha_actor` 基础数据表进行连接   |
+
+## Pull Request Requested Reviewers
+
+Pull Request 当前请求过的 reviewers。
+
+视图名：`pull_request_requested_reviewers`
+
+| 字段名                          | 数据类型   | 附加说明                          |
+| ------------------------------ | --------- | -------------------------------- |
+| `pull_request_id`              | bigint   |                                   |
+| `requested_reviewer_id`        | bigint   | 可与 `gha_actor` 基础数据表进行连接   |
+
 ## Issues
 
 视图名：`issues`
@@ -87,7 +110,7 @@ GhArchive 上的数据是用户在 GitHub
 | `event_id`               | bigint   |                                                                 |
 | `id`                     | bigint   |                                                                 |
 | `repo_id`                | bigint   |                                                                 |
-| `repo_name`              | text     |                                                                 |
+| `repo_name`              | text     | 注意：仓库可能存在更名行为                              |
 | `issue_id`               | bigint   | 一个 PR 会与一个 Issue 相对应 |
 | `pull_request_id`        | bigint   |                                                                 |
 | `number`                 | bigint   | 针对 `review_comment` / `issue_comment`                         |
@@ -115,3 +138,4 @@ GhArchive 上的数据是用户在 GitHub
 ### 已知问题
 
 - 由于 `gha_issues_pull_requests` 基础信息表的数据缺失，根据 `pull_request_id` 不一定能够找到对应的 `issue_id`，建议使用 `number` 字段替代。
+

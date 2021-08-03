@@ -20,7 +20,7 @@ GhArchive 上的数据是用户在 GitHub
 | `milestone_id`          | `bigint`       |                                                            |
 | `milestone`             | `varchar(200)` |                                                            |
 | `base_sha`              | `varchar(40)`  |                                                            |
-| `creator_id`            | `bigint`       | 创建者的 Actor ID，可以通过连接 `gha_actor` 获取创建者的更多信息  |
+| `creator_id`            | `bigint`       | 创建者的 Actor ID，可以通过连接 `actors` 视图获取创建者的更多信息  |
 | `created_at`            | `bigint`       |                                                            |
 | `updated_at`            | `timestamp`    |                                                            |
 | `closed_at`             | `timestamp`    |                                                            |
@@ -44,7 +44,7 @@ Pull Request 当前分配的 Assignees。
 | 字段名             | 数据类型  | 附加说明                              |
 |-------------------|----------|-------------------------------------|
 | `pull_request_id` | `bigint` |                                     |
-| `assignee_id`     | `bigint` | 可与 `gha_actor` 基础数据表进行连接     |
+| `assignee_id`     | `bigint` | 可与 `actors` 视图基础数据表进行连接     |
 
 ## Pull Request Requested Reviewers
 
@@ -55,7 +55,7 @@ Pull Request 当前请求过的 reviewers。
 | 字段名                   | 数据类型  | 附加说明                             |
 |-------------------------|----------|-------------------------------------|
 | `pull_request_id`       | `bigint` |                                     |
-| `requested_reviewer_id` | `bigint` | 可与 `gha_actor` 基础数据表进行连接     |
+| `requested_reviewer_id` | `bigint` | 可与 `actors` 视图基础数据表进行连接     |
 
 ## Issues
 

@@ -39,10 +39,10 @@ Pull Request 当前分配的 Assignees。
 
 视图名：`pull_request_assignees`
 
-| 字段名            | 数据类型 | 附加说明                             |
-| ----------------- | -------- | ------------------------------------ |
-| `pull_request_id` | `bigint` |                                      |
-| `assignee_id`     | `bigint` | 可与 `actors` 视图进行连接         |
+| 字段名            | 数据类型 | 附加说明                   |
+| ----------------- | -------- | -------------------------- |
+| `pull_request_id` | `bigint` |                            |
+| `assignee_id`     | `bigint` | 可与 `actors` 视图进行连接 |
 
 ## Pull Request Requested Reviewers
 

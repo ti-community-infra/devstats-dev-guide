@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>devstats-dev-guide</title>
-                <meta name="robots" content="noindex" />
+        <title>视图 - devstats-dev-guide</title>
                 
 
         <!-- Custom HTML head -->
@@ -15,21 +14,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
         
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
         
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -37,7 +36,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -83,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="tables.html"><strong aria-hidden="true">3.</strong> 数据表结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="tables/view.html"><strong aria-hidden="true">3.1.</strong> 视图</a></li></ol></li><li class="chapter-item expanded "><a href="deployment.html"><strong aria-hidden="true">4.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="custom.html"><strong aria-hidden="true">5.</strong> 定制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="custom/custom-dashboard.html"><strong aria-hidden="true">5.1.</strong> 定制 Grafana 仪表盘</a></li></ol></li><li class="chapter-item expanded "><a href="release.html"><strong aria-hidden="true">6.</strong> 发布流程</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../introductions/data-source.html"><strong aria-hidden="true">1.1.</strong> 数据来源</a></li><li class="chapter-item expanded "><a href="../introductions/data-collect.html"><strong aria-hidden="true">1.2.</strong> 数据收集方式</a></li><li class="chapter-item expanded "><a href="../introductions/store.html"><strong aria-hidden="true">1.3.</strong> 数据存储方式</a></li><li class="chapter-item expanded "><a href="../introductions/display.html"><strong aria-hidden="true">1.4.</strong> 数据展示方式</a></li></ol></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> 架构</a></li><li class="chapter-item expanded "><a href="../tables.html"><strong aria-hidden="true">3.</strong> 数据表结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../tables/view.html" class="active"><strong aria-hidden="true">3.1.</strong> 视图</a></li></ol></li><li class="chapter-item expanded "><a href="../deployment.html"><strong aria-hidden="true">4.</strong> 部署流程</a></li><li class="chapter-item expanded "><a href="../custom.html"><strong aria-hidden="true">5.</strong> 定制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../custom/custom-dashboard.html"><strong aria-hidden="true">5.1.</strong> 定制 Grafana 仪表盘</a></li></ol></li><li class="chapter-item expanded "><a href="../release.html"><strong aria-hidden="true">6.</strong> 发布流程</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -115,7 +114,7 @@
                     <h1 class="menu-title">devstats-dev-guide</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                                                                         
@@ -144,94 +143,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="devstats-介绍"><a class="header" href="#devstats-介绍">devstats 介绍</a></h1>
-<h2 id="关于-devstats"><a class="header" href="#关于-devstats">关于 devstats</a></h2>
-<p>devstats 是一个使用 <a href="https://github.com/zalando/patroni">HA</a> <a href="https://www.postgresql.org">Postgres</a> 数据库和 <a href="https://grafana.com">Grafana</a> 仪表盘来可视化 GitHub 存档的工具集。
-所有的东西都是开源的，所以它可以被其他 <a href="https://www.cncf.io/">CNCF</a> 和非 CNCF 开源项目使用。唯一的要求是，项目必须托管在一个公共的 GitHub 仓库上。
-CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="https://www.equinix.com/">Equinix</a> 裸机 <a href="https://kubernetes.io">Kubernetes</a> 节点部署，并使用 <a href="https://helm.sh/">Helm</a> 图部署。</p>
-<h2 id="在-tidb-社区的应用"><a class="header" href="#在-tidb-社区的应用">在 TiDB 社区的应用</a></h2>
-<p>因为 devstats 支持其他项目使用，所以我们为 TiDB 社区部署了一套来帮助我们进行社区状况分析。（正在进行中）</p>
-<h2 id="关于本书"><a class="header" href="#关于本书">关于本书</a></h2>
-<p>编写本书的目的：一方面是希望本书作为一本手册能够分析 devstats 的架构和记录它的部署流程，另外一方面也希望能够作为一个使用 devstats 的例子供其他社区参考。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="数据来源"><a class="header" href="#数据来源">数据来源</a></h1>
-<h2 id="gh-archive"><a class="header" href="#gh-archive">GH Archive</a></h2>
-<h3 id="介绍"><a class="header" href="#介绍">介绍</a></h3>
-<p><a href="https://www.gharchive.org">GH Archive</a> 是一个记录 GitHub 公共时间轴的项目，将其归档，并使其易于访问，以便进一步分析。</p>
-<h3 id="记录形式"><a class="header" href="#记录形式">记录形式</a></h3>
-<p><a href="https://www.gharchive.org">GH Archive</a> 会将 GitHub 所有的<a href="https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads">事件</a>通过 API <a href="https://github.com/igrigorik/gharchive.org/tree/master/crawler">爬取</a>并存储为 JSON 文件，然后将其整理上传到 Google Big Query 的公开数据集。</p>
-<p>另外， <a href="https://www.gharchive.org">GH Archive</a> 在爬取过程中会对邮件信息进行<a href="https://github.com/igrigorik/gharchive.org/blob/a5fb1a4907e26d527f317e5494ebf573864e3d86/crawler/crawler.rb#L40">混淆</a>，防止数据集被利用暴露个人隐私。</p>
-<p>devstats 会直接分析这些 JSON 文件作为数据来源。</p>
-<h2 id="github-api"><a class="header" href="#github-api">GitHub API</a></h2>
-<h3 id="介绍-1"><a class="header" href="#介绍-1">介绍</a></h3>
-<p>GitHub 提供了两套 API 来让用户获取 GitHub 上几乎所有的数据：</p>
-<ul>
-<li><a href="https://docs.github.com/en/rest">REST API</a></li>
-<li><a href="https://docs.github.com/en/graphql">GraphQL API</a></li>
-</ul>
-<h3 id="记录形式-1"><a class="header" href="#记录形式-1">记录形式</a></h3>
-<p>无论是 <a href="https://docs.github.com/en/rest">REST API</a> 还是 <a href="https://docs.github.com/en/graphql">GraphQL API</a> 都可以以 JSON 的格式返回数据，devstats 会定时的去使用 API 获取数据作为数据来源。</p>
-<h2 id="git"><a class="header" href="#git">Git</a></h2>
-<h3 id="介绍-2"><a class="header" href="#介绍-2">介绍</a></h3>
-<p><a href="https://git-scm.com">Git</a> 作为一个分布式版本控制系统，存储了代码仓库所有的分支上的所有 commit。</p>
-<h3 id="记录形式-2"><a class="header" href="#记录形式-2">记录形式</a></h3>
-<p><a href="https://git-scm.com">Git</a> 存储了代码仓库的所有 commit，devstats 会克隆仓库，并从中获取文件级别的 commit 信息作为数据来源。</p>
-<h2 id="cncf-gitdm"><a class="header" href="#cncf-gitdm">CNCF gitdm</a></h2>
-<h3 id="介绍-3"><a class="header" href="#介绍-3">介绍</a></h3>
-<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 是 CNCF 对 <a href="https://lwn.net/Articles/290957">gitdm</a> 的一个 fork，用来计算开发者及其公司对开源项目的贡献。</p>
-<h3 id="记录形式-3"><a class="header" href="#记录形式-3">记录形式</a></h3>
-<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 将数据存储为 txt 和 JSON 文件，并且保持每个月一两次的更新。devstats 会将数据以 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON</a> 的格式导入到其中来作为数据来源。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="数据收集方式"><a class="header" href="#数据收集方式">数据收集方式</a></h1>
-<h2 id="gh-archive-1"><a class="header" href="#gh-archive-1">GH Archive</a></h2>
-<h3 id="收集方式"><a class="header" href="#收集方式">收集方式</a></h3>
-<p>devstats 会一次性将 <a href="https://www.gharchive.org">GH Archive</a> 所有的 JSON 文件逐个下载下来进行解析然后存储到 PostgreSQL 中，并且在该过程中会将数据分为固定数据和可变数据，将 event_id 作为可变数据的主键来进行维护和更新。</p>
-<h3 id="收集工具"><a class="header" href="#收集工具">收集工具</a></h3>
-<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/gha2db/gha2db.go">gha2db</a> 工具来解析数据，并将数据存储到 PostgreSQL 中。</p>
-<h2 id="github-api-1"><a class="header" href="#github-api-1">GitHub API</a></h2>
-<h3 id="收集方式-1"><a class="header" href="#收集方式-1">收集方式</a></h3>
-<p>devstats 主要利用 GitHub API 来补充和校正 <a href="https://www.gharchive.org">GH Archive</a> 中缺失或错误的数据。devstats 会通过定时任务来调用 GitHub API 获取两个小时以内的相关事件，并且把这些数据更新到 PostgreSQL 中。例如：Issue/PR 当前的 Label 或 Milestone 信息，就需要 API 尽快的来收集和更新。</p>
-<h3 id="收集工具-1"><a class="header" href="#收集工具-1">收集工具</a></h3>
-<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/ghapi2db/ghapi2db.go">ghapi2db</a> 来调用 GitHub API 拉取数据并将数据存储到 PostgreSQL 中。</p>
-<h2 id="git-1"><a class="header" href="#git-1">Git</a></h2>
-<h3 id="收集方式-2"><a class="header" href="#收集方式-2">收集方式</a></h3>
-<p>devstats 会将需要分析的仓库直接 clone 或者 pull 到本地，然后查看整个仓库的所有的 git log 并对它进行分析。devstats 会直接通过提交的 SHA 来定位改动并且统计改动大小信息。</p>
-<h3 id="收集工具-2"><a class="header" href="#收集工具-2">收集工具</a></h3>
-<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/get_repos/get_repos.go">get_repos</a> 来 clone/pull 仓库，并对仓库的 git log 逐一分析。</p>
-<h2 id="cncf-gitdm-1"><a class="header" href="#cncf-gitdm-1">CNCF gitdm</a></h2>
-<h3 id="收集方式-3"><a class="header" href="#收集方式-3">收集方式</a></h3>
-<p><a href="https://github.com/cncf/gitdm">CNCF gitdm</a> 提供了一个存储开发者所属公司信息的 <a href="https://github.com/cncf/devstats/blob/master/github_users.json">JSON 文件</a>，该文件使用 <a href="https://git-lfs.github.com/">Git LFS</a> 方式存储。devstats 会从中解析出 GitHub 用户的公司信息，并与其他数据结合，这样我们就收集到了大部分贡献者的公司信息。</p>
-<h3 id="收集工具-3"><a class="header" href="#收集工具-3">收集工具</a></h3>
-<p>devstats 使用 <a href="https://github.com/cncf/devstatscode/blob/master/cmd/import_affs/import_affs.go">import_affs</a> 来解析 JSON 文件将员工公开信息存储到数据库中。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="数据存储方式"><a class="header" href="#数据存储方式">数据存储方式</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="数据展示方式"><a class="header" href="#数据展示方式">数据展示方式</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="架构"><a class="header" href="#架构">架构</a></h1>
-<h2 id="整体架构"><a class="header" href="#整体架构">整体架构</a></h2>
-<h3 id="架构图"><a class="header" href="#架构图">架构图</a></h3>
-<p><img src="../img/arch.png" alt="arch" /></p>
-<h3 id="架构说明"><a class="header" href="#架构说明">架构说明</a></h3>
-<p>当贡献者们在 GitHub 上活动时会产生相关的日志数据，我们会采用定时任务的方式每隔一小时将这些数据同步到 PostgreSQL 中，然后通过 Grafana 将数据展示出来给大家看。另外我们利用 Travis CI 对我们的改动进行测试和部署。</p>
-<h2 id="核心组件"><a class="header" href="#核心组件">核心组件</a></h2>
-<ul>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.grafana">Grafana</a> 用于展示数据</li>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.patroni">PostgreSQL</a> 用于存储数据
-<ul>
-<li>使用 <a href="https://github.com/zalando/patroni">Patroni</a> 构建 PostgreSQL 集群保证高可用性</li>
-</ul>
-</li>
-<li><a href="https://github.com/cncf/devstats-docker-images/blob/master/images/Dockerfile.full.test">Provisions</a> 用于从各个数据源收集数据
-<ul>
-<li>在该组件中主要是使用 <a href="https://github.com/cncf/devstatscode">devstatscode</a> 的代码来从各个数据源收集数据</li>
-</ul>
-</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="数据库表"><a class="header" href="#数据库表">数据库表</a></h1>
-<h2 id="概述"><a class="header" href="#概述">概述</a></h2>
-<p>单个数据库中包含了以下几类数据库表：</p>
-<ul>
-<li>以 <code>gha_</code> 为前缀的数据表存放的是从 GHArchive 中爬取过来经过结构化存储起来的基础数据</li>
-<li>以 <code>s</code> 为前缀的数据库表存放的是 series 数据，是 devstats 将基础数据经过指标计算出来的时序数据，这些数据会被 Grafana 通过查询得到，以图表或表格形式进行展示</li>
-<li>以 <code>t</code> 为前缀的数据库表存放的 tags 数据，是 devstats 从基础数据查询得到的一些列表数据，这些数据会在指标数据计算过程中、构建多列宽表表结构、Grafana 图表的下拉选项列表中使用到</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="视图"><a class="header" href="#视图">视图</a></h1>
+                        <h1 id="视图"><a class="header" href="#视图">视图</a></h1>
 <p>GhArchive 上的数据是用户在 GitHub 上产生的公开活动的事件数据，然而在一些查询场景下，我们往往只需要针对数据对象的最新状态进行查询，而不需要遍历过往的历史数据。为了简化这些查询工作，可以通过数据库的视图功能，根据历史数据来构建数据对象最新状态的模型。</p>
 <h2 id="pull-requests"><a class="header" href="#pull-requests">Pull Requests</a></h2>
 <p>视图名：<code>pull_requests</code></p>
@@ -391,54 +303,18 @@ CNCF 的 <a href="https://devstats.cncf.io/">devstats</a> 项目使用 <a href="
 <tr><td><code>is_code_contributor</code></td><td><code>boolean</code></td><td>根据 PR 数量是否大于 1 来判断是否为代码贡献者</td></tr>
 <tr><td><code>is_bot</code></td><td><code>boolean</code></td><td>根据 <code>gha_bot_logins</code> 表的 pattern 判断该 login 的 actor 是否为机器人</td></tr>
 </tbody></table>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="部署流程"><a class="header" href="#部署流程">部署流程</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="定制"><a class="header" href="#定制">定制</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="自定义-grafana-仪表盘"><a class="header" href="#自定义-grafana-仪表盘">自定义 Grafana 仪表盘</a></h1>
-<h2 id="步骤"><a class="header" href="#步骤">步骤</a></h2>
-<ol>
-<li>在已经运行的 Grafana 上添加新的 Dashboard 或对已有的 Dashboard 进行修改，并点击保存按钮进行保存；</li>
-<li>通过 <code>kubectl cp</code> 命令将 Grafana 实例所使用的 sqlite 文件 dump 下来；</li>
-</ol>
-<pre><code class="language-bash">kubectl cp devstats-grafana-pingcap-xxx:/root/grafana.pingcap.db ~/dump/grafana.pingcap.db
-kubectl cp devstats-grafana-chaosmesh-xxx:/root/grafana.chaosmesh.db ~/dump/grafana.chaosmesh.db
-kubectl cp devstats-grafana-tikv-xxx:/root/grafana.tikv.db ~/dump/grafana.tikv.db
-</code></pre>
-<ol start="3">
-<li>切换到开发环境配置目录</li>
-</ol>
-<pre><code>cd configs/dev/
-</code></pre>
-<ol start="4">
-<li>将 dump 下来的 sqlite 文件复制到 <code>configs/dev/sqlite</code> 目录内；</li>
-<li>执行 <code>dump_dashboard_json.sh</code> 脚本, 将 sqlite 目录下的 *.db 文件当中的 Dashboard 数据记录转换为 json 文件，存在在 sqlite 目录下。如果希望只对单个项目进行处理，可以通过在命令行前添加变量 <code>ONLY=&lt;project_lowername&gt;</code> 来指定；</li>
-</ol>
-<pre><code class="language-bash">ONLY=tikv dump_dashboard_json.sh
-</code></pre>
-<ol start="5">
-<li>如果希望将新增或修改过后的<strong>单个</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboard.sh</code> 脚本进行复制；</li>
-</ol>
-<pre><code class="language-bash">FROM_PROJ=tikv add_dashboard.sh dashboard_name.json
-</code></pre>
-<ol start="6">
-<li>如果希望将新增或修改过后的<strong>所有</strong> Dashboard 配置共享到其它项目当中，可以使用 <code>add_dashboards.sh</code> 脚本进行复制；</li>
-</ol>
-<pre><code class="language-bash">FROM_PROJ=tikv add_dashboards.sh
-</code></pre>
-<ol start="7">
-<li>
-<p>核对复制出来的 Dashboard 是否存在错误，因为复制脚本在复制之后后将配置当中的项目名修改为新的项目名，这个过程中可能会修改了不应该修改的项目名，例如：dashboards.json 配置当中包含了所有项目名的链接列表；</p>
-</li>
-<li>
-<p>提交代码，并在开发环境服务器上进行测试。</p>
-</li>
-</ol>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="发布流程"><a class="header" href="#发布流程">发布流程</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../tables.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
+                                                    <a rel="next" href="../deployment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
                         <div style="clear: both"></div>
                     </nav>
@@ -446,7 +322,13 @@ kubectl cp devstats-grafana-tikv-xxx:/root/grafana.tikv.db ~/dump/grafana.tikv.d
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../tables.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
+                                    <a rel="next" href="../deployment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                             </nav>
 
         </div>
@@ -459,21 +341,16 @@ kubectl cp devstats-grafana-tikv-xxx:/root/grafana.tikv.db ~/dump/grafana.tikv.d
         </script>
         
         
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
-                        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
-                
+        
     </body>
 </html>
